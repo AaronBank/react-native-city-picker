@@ -1,6 +1,6 @@
 {
     "name": "react-native-city-picker",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "a three-level linkage selector",
     "main": "index.js",
     "scripts": {

@@ -169,7 +169,7 @@ export default class extends Component {
                         </TouchableOpacity>
                     </View>
                     { !tabs.length ? 
-                        <View style={ [styles.tabView, contentStyle] }>
+                        <View style={ [styles.tabViewLoad, contentStyle] }>
                             <ActivityIndicator size="large" color="#ccc" />
                         </View>
                         : <TabView
@@ -249,6 +249,9 @@ const styles = StyleSheet.create({
         height: parseInt(deviceHeight() * 4 / 6),
     },
     tabView: {
+        backgroundColor: '#fff'
+    },
+    tabViewLoad: {
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
