@@ -19,7 +19,7 @@
 ```javascript
 
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 import data from './data.json'
 
@@ -148,7 +148,7 @@ activeColor            | string    | 是      | `#e4393c` | 选中颜色色值
 ```javascript
 
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 import data from './data.json'
 

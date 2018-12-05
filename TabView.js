@@ -45,8 +45,9 @@ class Tab extends PureComponent {
                     horizontal
                     showsHorizontalScrollIndicator={ false }
                     alwaysBounceHorizontal={ false }
-                    onContentSizeChange={ (contentWidth, contentHeight) => { console.log('盾冬视图', contentWidth, contentHeight) } }
                     onMomentumScrollEnd={ this.onScrollEnd }
+                    onScroll={ !isIos ? this.onScrollEnd : () => {} }
+                    scrollEventThrottle={ 50 }
                 >
                     {
                         switchTabs.map((tab, i) => {
@@ -81,13 +82,16 @@ class Tab extends PureComponent {
     }
 
     componentDidUpdate () {
-        this.animation()
-        this.setX(this.props.activeTab)
+        this.load()
     }
 
     componentDidMount () {
-        this.animation()
+        this.load()
+    }
+
+    load () {
         this.setX(this.props.activeTab)
+        this.animation()
     }
 
     setListLayout(e, i) {

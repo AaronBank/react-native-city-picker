@@ -19,7 +19,7 @@
 ```javascript
 
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 import data from './data.json'
 
@@ -148,7 +148,7 @@ This method accepts a parameter, the parameter type value of ` Array ` selected 
 ```javascript
 
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 import data from './data.json'
 
