@@ -32,6 +32,7 @@ class Tab extends PureComponent {
         this.list_len = 0
         this.contentOffsetX = 0
         this.onScrollEnd = this.onScrollEnd.bind(this)
+        this.onAndroidScrollEnd = this.onAndroidScrollEnd.bind(this)
     }
 
     render() {
@@ -46,8 +47,8 @@ class Tab extends PureComponent {
                     showsHorizontalScrollIndicator={ false }
                     alwaysBounceHorizontal={ false }
                     onMomentumScrollEnd={ this.onScrollEnd }
-                    onScroll={ !isIos ? this.onScrollEnd : () => {} }
-                    scrollEventThrottle={ 50 }
+                    onScroll={ this.onAndroidScrollEnd }
+                    scrollEventThrottle={15}
                 >
                     {
                         switchTabs.map((tab, i) => {
@@ -136,6 +137,13 @@ class Tab extends PureComponent {
     
     onScrollEnd (e) {
         this.contentOffsetX = e.nativeEvent.contentOffset.x
+    }
+
+    onAndroidScrollEnd (e) {
+        if (isIos) return
+
+        this.contentOffsetX = e.nativeEvent.contentOffset.x
+        this.animation()
     }
 
     componentWillUnmount () {
